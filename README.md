@@ -1,1 +1,0 @@
-# elasticsearch-fluentd-kibana-formula
