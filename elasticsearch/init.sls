@@ -2,7 +2,7 @@ openjdk-7-jre-headless:
   pkg:
     - installed
 
-elasticsearch:
+install-elasticsearch:
   pkg.installed:
     - sources:
       - elasticsearch: https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-2.2.0.deb
@@ -13,4 +13,4 @@ elasticsearch:
 elasticsearch:
   service.running:
     - require:
-      - pkg: elasticsearch
+      - pkg: install-elasticsearch
