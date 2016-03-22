@@ -8,7 +8,8 @@ kibana-repo:
 
 install-kibana:
   pkg.installed:
-    - fromrepo: kibana-repo
+    - require:
+      - pkgrepo: kibana-repo
     - unless: ls /opt/kibana/bin/kibana
 
 kibana:

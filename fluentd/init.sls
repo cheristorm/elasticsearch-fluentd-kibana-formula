@@ -12,7 +12,8 @@ fluentd-repo:
 install-fluentd:
   pkg.installed:
     - name: td-agent
-    - fromrepo: fluentd-repo
+    - require:
+      - pkgrepo: fluentd-repo
     - unless: ls /usr/sbin/td-agent
 
 td-agent:
