@@ -6,6 +6,12 @@ kibana-repo:
     - file: /etc/apt/sources.list.d/kibana.list
     - key_url: https://packages.elastic.co/GPG-KEY-elasticsearch
 
-kibana:
+install-kibana:
   pkg.installed:
     - fromrepo: kibana-repo
+    - unless: ls /opt/kibana/bin/kibana
+
+kibana:
+  service.running:
+    - require:
+      - pkg: install-kibana
