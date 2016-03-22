@@ -8,7 +8,7 @@ install-elasticsearch:
       - elasticsearch: https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-2.2.0.deb
     - require:
       - pkg: openjdk-7-jre-headless
-    - unless: ls /usr/sbin/elasticsearch
+    - unless: ls /usr/share/elasticsearch
 
 elasticsearch:
   service.running:
